@@ -430,8 +430,8 @@ endif
 if index(g:bundle_group, 'leaderf') >= 0
 	Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
-	" ALT+n 打开 buffer 模糊匹配
-	let g:Lf_ShortcutB = '<m-n>'
+	" 自动生成 gtags 数据库
+	let g:Lf_GtagsAutoGenerate = 1
 
 	" 打开函数列表，按 i 进入模糊匹配，ESC 退出
 	noremap <space>fp :Leaderf file<cr>
@@ -449,7 +449,13 @@ if index(g:bundle_group, 'leaderf') >= 0
 	noremap <space>fb :Leaderf buffer<cr>
 
 	" 全局 tags 模糊匹配
-	noremap <sapce>fg :Leaderf Tag<cr>
+	noremap <space>fg :Leaderf Tag<cr>
+
+	" 更新 gtags
+	noremap <space>fu :Leaderf gtags --update<cr>
+
+	" 使用 rg 进行 grep
+	noremap <space>fr :Leaderf rg<cr>
 
 	" 最大历史文件保存 2048 个
 	let g:Lf_MruMaxFiles = 2048
@@ -584,5 +590,4 @@ let g:ycm_filetype_whitelist = {
 			\ "zimbu":1,
 			\ "ps1":1,
 			\ }
-
 
