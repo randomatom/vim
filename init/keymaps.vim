@@ -258,3 +258,47 @@ inoremap <silent><f1> <ESC>:AsyncTask task-shift-f1<cr>
 inoremap <silent><f2> <ESC>:AsyncTask task-shift-f2<cr>
 inoremap <silent><f3> <ESC>:AsyncTask task-shift-f3<cr>
 inoremap <silent><f4> <ESC>:AsyncTask task-shift-f4<cr>
+
+
+
+"----------------------------------------------------------------------
+" LeaderF 按键配置
+"----------------------------------------------------------------------
+
+	" 打开函数列表，按 i 进入模糊匹配，ESC 退出
+	noremap <space>fp :Leaderf file<cr>
+
+	" 打开最近使用的文件 MRU，进行模糊匹配
+	noremap <space>fm :Leaderf! mru<cr>
+
+	" 打开函数列表，按 i 进入模糊匹配，ESC 退出
+	noremap <space>ff :Leaderf! function<cr>
+
+	" 打开 tag 列表，i 进入模糊匹配，ESC退出
+	noremap <space>ft :Leaderf! bufTag<cr>
+
+	" 打开 buffer 列表进行模糊匹配
+	noremap <space>fb :Leaderf buffer<cr>
+
+	" 全局 tags 模糊匹配
+	noremap <space>fa :Leaderf tag<cr>
+
+	" 使用 rg 进行 grep
+	noremap <space>fg :Leaderf rg<cr>
+
+	" 当前目录下 查找光标下的词
+	noremap <space>fw :<C-U><C-R>=printf("Leaderf! rg %s .", expand("<cword>"))<CR><CR>
+
+	" gtags 配置
+	" 更新
+	noremap <space>gu :Leaderf gtags --update<cr>
+	" 查找定义
+	noremap <space>gd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
+	" 查找引用
+	noremap <space>gr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
+	" 回退
+	noremap <space>go :<C-U><C-R>=printf("Leaderf! gtags --recall %s", "")<CR><CR>
+	" 下一个结果
+	noremap <space>gn :<C-U><C-R>=printf("Leaderf gtags --next %s", "")<CR><CR>
+	" 上一个结果
+	noremap <space>gp :<C-U><C-R>=printf("Leaderf gtags --previous %s", "")<CR><CR>

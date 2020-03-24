@@ -432,30 +432,7 @@ if index(g:bundle_group, 'leaderf') >= 0
 
 	" 自动生成 gtags 数据库
 	let g:Lf_GtagsAutoGenerate = 1
-
-	" 打开函数列表，按 i 进入模糊匹配，ESC 退出
-	noremap <space>fp :Leaderf file<cr>
-
-	" 打开最近使用的文件 MRU，进行模糊匹配
-	noremap <space>fm :Leaderf! mru<cr>
-
-	" 打开函数列表，按 i 进入模糊匹配，ESC 退出
-	noremap <space>ff :Leaderf! function<cr>
-
-	" 打开 tag 列表，i 进入模糊匹配，ESC退出
-	noremap <space>ft :Leaderf! bufTag<cr>
-
-	" 打开 buffer 列表进行模糊匹配
-	noremap <space>fb :Leaderf buffer<cr>
-
-	" 全局 tags 模糊匹配
-	noremap <space>fg :Leaderf Tag<cr>
-
-	" 更新 gtags
-	noremap <space>fu :Leaderf gtags --update<cr>
-
-	" 使用 rg 进行 grep
-	noremap <space>fr :Leaderf rg<cr>
+	let g:Lf_Gtagslabel = 'native-pygments'
 
 	" 最大历史文件保存 2048 个
 	let g:Lf_MruMaxFiles = 2048
@@ -496,6 +473,7 @@ if index(g:bundle_group, 'leaderf') >= 0
 			\ "Tag": [["<ESC>", ':exec g:Lf_py "tagExplManager.quit()"<cr>']],
 			\ "BufTag": [["<ESC>", ':exec g:Lf_py "bufTagExplManager.quit()"<cr>']],
 			\ "Function": [["<ESC>", ':exec g:Lf_py "functionExplManager.quit()"<cr>']],
+			\ "Rg": [["<ESC>", ':exec g:Lf_py "rgExplManager.quit()"<cr>']],
 			\ }
 
 endif
