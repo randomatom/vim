@@ -15,7 +15,7 @@
 "----------------------------------------------------------------------
 if !exists('g:bundle_group')
 	let g:bundle_group = ['basic', 'tags', 'enhanced', 'filetypes', 'textobj']
-	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'ale', 'echodoc']
+	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'ale', 'echodoc', 'task']
 	let g:bundle_group += ['leaderf']
 endif
 
@@ -410,6 +410,19 @@ if index(g:bundle_group, 'echodoc') >= 0
 	set noshowmode
 	let g:echodoc#enable_at_startup = 1
 endif
+
+
+
+"----------------------------------------------------------------------
+" task：异步运行任务
+"----------------------------------------------------------------------
+if index(g:bundle_group, 'task') >= 0
+	Plug 'skywind3000/asyncrun.vim'
+	Plug 'skywind3000/asynctasks.vim'
+
+	"let g:asynctasks_term_pos = 'quickfix'
+endif
+
 
 
 "----------------------------------------------------------------------
