@@ -428,7 +428,7 @@ endif
 " LeaderF：CtrlP / FZF 的超级代替者，文件模糊匹配，tags/函数名 选择
 "----------------------------------------------------------------------
 if index(g:bundle_group, 'leaderf') >= 0
-	Plug 'Yggdroot/LeaderF'
+	Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
 	" ALT+n 打开 buffer 模糊匹配
 	let g:Lf_ShortcutB = '<m-n>'
