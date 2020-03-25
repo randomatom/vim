@@ -250,15 +250,10 @@ inoremap <silent><s-f7> <ESC>:AsyncTask project-ini<cr>
 inoremap <silent><s-f8> <ESC>:AsyncTask project-install<cr>
 inoremap <silent><s-f9> <ESC>:AsyncTask project-build<cr>
 
-noremap <silent><f1> :AsyncTask task-f1<cr>
-noremap <silent><f2> :AsyncTask task-f2<cr>
 noremap <silent><f3> :AsyncTask task-f3<cr>
 noremap <silent><f4> :AsyncTask task-f4<cr>
-inoremap <silent><f1> <ESC>:AsyncTask task-shift-f1<cr>
-inoremap <silent><f2> <ESC>:AsyncTask task-shift-f2<cr>
 inoremap <silent><f3> <ESC>:AsyncTask task-shift-f3<cr>
 inoremap <silent><f4> <ESC>:AsyncTask task-shift-f4<cr>
-
 
 
 "----------------------------------------------------------------------
@@ -289,6 +284,9 @@ inoremap <silent><f4> <ESC>:AsyncTask task-shift-f4<cr>
 	" 使用 rg 进行 grep
 	noremap <space>fg :Leaderf rg<cr>
 
+	" 回退
+	noremap <space>fo :Leaderf! --recall<CR><CR>
+
 	" 当前目录下 查找光标下的词
 	noremap <space>fw :<C-U><C-R>=printf("Leaderf! rg %s .", expand("<cword>"))<CR><CR>
 
@@ -299,9 +297,24 @@ inoremap <silent><f4> <ESC>:AsyncTask task-shift-f4<cr>
 	noremap <space>gd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
 	" 查找引用
 	noremap <space>gr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
-	" 回退
-	noremap <space>go :<C-U><C-R>=printf("Leaderf! gtags --recall %s", "")<CR><CR>
 	" 下一个结果
 	noremap <space>gn :<C-U><C-R>=printf("Leaderf gtags --next %s", "")<CR><CR>
 	" 上一个结果
 	noremap <space>gp :<C-U><C-R>=printf("Leaderf gtags --previous %s", "")<CR><CR>
+	" 回退
+	noremap <space>go :Leaderf! gtags --recall<CR><CR>
+
+	" 使用 rg 进行 grep
+	noremap <space>fM :LeaderfMarks<cr>
+
+	" 使用 ESC 键可以直接退出 leaderf 的 normal 模式
+	let g:Lf_NormalMap = {
+			\ "File":   [["<ESC>", ':exec g:Lf_py "fileExplManager.quit()"<CR>']],
+			\ "Buffer": [["<ESC>", ':exec g:Lf_py "bufExplManager.quit()"<cr>']],
+			\ "Mru": [["<ESC>", ':exec g:Lf_py "mruExplManager.quit()"<cr>']],
+			\ "Tag": [["<ESC>", ':exec g:Lf_py "tagExplManager.quit()"<cr>']],
+			\ "BufTag": [["<ESC>", ':exec g:Lf_py "bufTagExplManager.quit()"<cr>']],
+			\ "Function": [["<ESC>", ':exec g:Lf_py "functionExplManager.quit()"<cr>']],
+			\ "Rg": [["<ESC>", ':exec g:Lf_py "rgExplManager.quit()"<cr>']],
+			\ "Marks": [["<ESC>", ':exec g:Lf_py "marksExplManager.quit()"<cr>']],
+			\ }
