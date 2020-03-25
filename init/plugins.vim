@@ -436,6 +436,7 @@ endif
 "----------------------------------------------------------------------
 if index(g:bundle_group, 'leaderf') >= 0
 	Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+	Plug 'Yggdroot/LeaderF-marks'
 
 	" 自动生成 gtags 数据库
 	let g:Lf_GtagsAutoGenerate = 1
@@ -472,16 +473,6 @@ if index(g:bundle_group, 'leaderf') >= 0
 	" 禁用 function/buftag 的预览功能，可以手动用 p 预览
 	let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 
-	" 使用 ESC 键可以直接退出 leaderf 的 normal 模式
-	let g:Lf_NormalMap = {
-			\ "File":   [["<ESC>", ':exec g:Lf_py "fileExplManager.quit()"<CR>']],
-			\ "Buffer": [["<ESC>", ':exec g:Lf_py "bufExplManager.quit()"<cr>']],
-			\ "Mru": [["<ESC>", ':exec g:Lf_py "mruExplManager.quit()"<cr>']],
-			\ "Tag": [["<ESC>", ':exec g:Lf_py "tagExplManager.quit()"<cr>']],
-			\ "BufTag": [["<ESC>", ':exec g:Lf_py "bufTagExplManager.quit()"<cr>']],
-			\ "Function": [["<ESC>", ':exec g:Lf_py "functionExplManager.quit()"<cr>']],
-			\ "Rg": [["<ESC>", ':exec g:Lf_py "rgExplManager.quit()"<cr>']],
-			\ }
 
 endif
 
