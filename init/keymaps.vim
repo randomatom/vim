@@ -280,6 +280,9 @@ inoremap <silent><f4> <ESC>:AsyncTask task-shift-f4<cr>
 	" 打开 buffer 列表进行模糊匹配
 	noremap <space>fb :Leaderf buffer<cr>
 
+	" 打开 buffer 列表进行模糊匹配
+	noremap <space>fl :Leaderf line<cr>
+
 	" 全局 tags 模糊匹配
 	noremap <space>fa :Leaderf tag<cr>
 
