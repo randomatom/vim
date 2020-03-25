@@ -16,7 +16,7 @@
 if !exists('g:bundle_group')
 	let g:bundle_group = ['basic', 'tags', 'enhanced', 'filetypes', 'textobj']
 	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'ale', 'echodoc', 'task']
-	let g:bundle_group += ['leaderf']
+	let g:bundle_group += ['leaderf', 'coc']
 endif
 
 
@@ -317,6 +317,13 @@ if index(g:bundle_group, 'nerdtree') >= 0
 	noremap <space>nt :NERDTreeToggle<cr>
 endif
 
+"----------------------------------------------------------------------
+" coc 补全插件
+"----------------------------------------------------------------------
+if index(g:bundle_group, 'coc') >= 0
+	Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install()}}
+
+endif
 
 "----------------------------------------------------------------------
 " LanguageTool 语法检查
