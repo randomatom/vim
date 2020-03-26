@@ -283,7 +283,7 @@ inoremap <silent><s-f9> <ESC>:AsyncTask project-build<cr>
 	noremap <space>fo :Leaderf! --recall<CR><CR>
 
 	" 当前目录下 查找光标下的词
-	noremap <space>fw :<C-U><C-R>=printf("Leaderf! rg %s .", expand("<cword>"))<CR><CR>
+	noremap <space>fw :<C-U><C-R>=printf("Leaderf! rg -w %s .", expand("<cword>"))<CR><CR>
 
 	" gtags 配置
 	" 更新
