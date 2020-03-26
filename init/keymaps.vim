@@ -250,11 +250,6 @@ inoremap <silent><s-f7> <ESC>:AsyncTask project-ini<cr>
 inoremap <silent><s-f8> <ESC>:AsyncTask project-install<cr>
 inoremap <silent><s-f9> <ESC>:AsyncTask project-build<cr>
 
-noremap <silent><f3> :AsyncTask task-f3<cr>
-noremap <silent><f4> :AsyncTask task-f4<cr>
-inoremap <silent><f3> <ESC>:AsyncTask task-shift-f3<cr>
-inoremap <silent><f4> <ESC>:AsyncTask task-shift-f4<cr>
-
 
 "----------------------------------------------------------------------
 " LeaderF 按键配置
