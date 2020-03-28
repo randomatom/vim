@@ -14,8 +14,8 @@
 " 默认情况下的分组，可以再前面覆盖之
 "----------------------------------------------------------------------
 if !exists('g:bundle_group')
-	let g:bundle_group = ['basic', 'tags', 'enhanced', 'filetypes', 'textobj']
-	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'ale', 'echodoc', 'task']
+	let g:bundle_group = ['basic', 'enhanced', 'filetypes', 'textobj']
+	let g:bundle_group += ['airline', 'nerdtree', 'ale', 'echodoc', 'task']
 	let g:bundle_group += ['leaderf']
 endif
 
@@ -152,8 +152,11 @@ if index(g:bundle_group, 'enhanced') >= 0
 	" 用 v 选中一个区域后，ALT_+/- 按分隔符扩大/缩小选区
 	Plug 'terryma/vim-expand-region'
 
-	" 快速文件搜索
-	Plug 'junegunn/fzf'
+	" 注释插件
+	Plug 'scrooloose/nerdcommenter'
+
+	" 快速文件搜索，可用 LeaderF 替代
+	" Plug 'junegunn/fzf'
 
 	" 给不同语言提供字典补全，插入模式下 c-x c-k 触发
 	Plug 'asins/vim-dict'
