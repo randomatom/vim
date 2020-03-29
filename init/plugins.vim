@@ -105,6 +105,9 @@ if index(g:bundle_group, 'basic') >= 0
 
 	" 用于在侧边符号栏显示 git/svn 的 diff
 	Plug 'mhinz/vim-signify'
+	" git差异 快捷键
+	nmap <space>gj <plug>(signify-next-hunk)
+	nmap <space>gk <plug>(signify-prev-hunk)
 
 	" 根据 quickfix 中匹配到的错误信息，高亮对应文件的错误行
 	" 使用 :RemoveErrorMarkers 命令或者 <space>ha 清除错误
@@ -154,6 +157,7 @@ if index(g:bundle_group, 'enhanced') >= 0
 
 	" 注释插件
 	Plug 'scrooloose/nerdcommenter'
+	let g:NERDSpaceDelims=1
 
 	" 快速文件搜索，可用 LeaderF 替代
 	" Plug 'junegunn/fzf'
