@@ -269,7 +269,7 @@ inoremap <silent><F10> <ESC>:call asyncrun#quickfix_toggle(6)<cr>
 	noremap <space>fb :Leaderf buffer<cr>
 
 	" 打开 buffer 列表进行模糊匹配
-	noremap <space>fl :Leaderf line<cr>
+	noremap <space>fl :Leaderf! line --cword<cr>
 
 	" 全局 tags 模糊匹配
 	noremap <space>fa :Leaderf tag<cr>
