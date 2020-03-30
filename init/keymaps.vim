@@ -205,6 +205,9 @@ inoremap <m-y> <c-\><c-o>d$
 " 传统的 CTRL+hjkl 移动窗口不适用于 vim 8.1 的终端模式，CTRL+hjkl 在
 " bash/zsh 及带文本界面的程序中都是重要键位需要保留，不能 tnoremap 的
 "----------------------------------------------------------------------
+
+noremap [w <c-w><c-w>
+
 noremap <m-H> <c-w>h
 noremap <m-L> <c-w>l
 noremap <m-J> <c-w>j
@@ -266,7 +269,7 @@ inoremap <silent><F10> <ESC>:call asyncrun#quickfix_toggle(6)<cr>
 	noremap <space>ft :Leaderf! bufTag<cr>
 
 	" 打开 buffer 列表进行模糊匹配
-	noremap <space>fb :Leaderf buffer<cr>
+	noremap <space>fb :Leaderf! buffer<cr>
 
 	" 打开 buffer 列表进行模糊匹配
 	noremap <space>fl :Leaderf! line --cword<cr>
