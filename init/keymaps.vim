@@ -271,8 +271,11 @@ inoremap <silent><F10> <ESC>:call asyncrun#quickfix_toggle(6)<cr>
 	" 打开 buffer 列表进行模糊匹配
 	noremap <space>fb :Leaderf! buffer<cr>
 
-	" 打开 buffer 列表进行模糊匹配
-	noremap <space>fl :Leaderf! line --cword<cr>
+	" 当前buffer 检索 当前词
+	noremap <space>fw :Leaderf! line --cword<cr>
+
+	" 当前目录下 查找光标下的词
+	noremap <space>fW :<C-U><C-R>=printf("Leaderf! rg -w %s .", expand("<cword>"))<CR><CR>
 
 	" 全局 tags 模糊匹配
 	noremap <space>fa :Leaderf tag<cr>
@@ -283,8 +286,6 @@ inoremap <silent><F10> <ESC>:call asyncrun#quickfix_toggle(6)<cr>
 	" 回退
 	noremap <space>fo :Leaderf! --recall<CR><CR>
 
-	" 当前目录下 查找光标下的词
-	noremap <space>fw :<C-U><C-R>=printf("Leaderf! rg -w %s .", expand("<cword>"))<CR><CR>
 
 	" gtags 配置
 	" 更新
@@ -300,13 +301,14 @@ inoremap <silent><F10> <ESC>:call asyncrun#quickfix_toggle(6)<cr>
 	" 回退
 	noremap <space>go :Leaderf! gtags --recall<CR><CR>
 
-	" 使用 rg 进行 grep
+	" 检索Marks列表
 	noremap <space>fM :LeaderfMarks<cr>
 
 	" 使用 ESC 键可以直接退出 leaderf 的 normal 模式
 	let g:Lf_NormalMap = {
 			\ "File":   [["<ESC>", ':exec g:Lf_py "fileExplManager.quit()"<CR>']],
 			\ "Buffer": [["<ESC>", ':exec g:Lf_py "bufExplManager.quit()"<cr>']],
+			\ "Line": [["<ESC>", ':exec g:Lf_py "lineExplManager.quit()"<cr>']],
 			\ "Mru": [["<ESC>", ':exec g:Lf_py "mruExplManager.quit()"<cr>']],
 			\ "Tag": [["<ESC>", ':exec g:Lf_py "tagExplManager.quit()"<cr>']],
 			\ "BufTag": [["<ESC>", ':exec g:Lf_py "bufTagExplManager.quit()"<cr>']],
