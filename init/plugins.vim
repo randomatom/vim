@@ -15,7 +15,8 @@
 "----------------------------------------------------------------------
 if !exists('g:bundle_group')
 	let g:bundle_group = ['basic', 'enhanced', 'filetypes', 'textobj']
-	let g:bundle_group += ['airline', 'nerdtree', 'ale', 'echodoc', 'task']
+	let g:bundle_group += ['airline']
+	let g:bundle_group += ['nerdtree', 'ale', 'echodoc', 'task']
 	let g:bundle_group += ['leaderf']
 endif
 
@@ -53,6 +54,8 @@ Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 " Diff 增强，支持 histogram / patience 等更科学的 diff 算法
 Plug 'chrisbra/vim-diff-enhanced'
 
+" [,] 这按键对的相关映射
+Plug 'tpope/vim-unimpaired'
 
 "----------------------------------------------------------------------
 " Dirvish 设置：自动排序并隐藏文件，同时定位到相关文件
@@ -288,6 +291,21 @@ if index(g:bundle_group, 'filetypes') >= 0
 
 	" vim org-mode 
 	Plug 'jceb/vim-orgmode', { 'for': 'org' }
+endif
+
+"----------------------------------------------------------------------
+" lightline
+"----------------------------------------------------------------------
+
+if index(g:bundle_group, 'lightline') >= 0
+	Plug 'itchyny/lightline.vim'
+	let g:lightline = {
+      \ 'colorscheme': 'PaperColor',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified', 'helloworld' ] ]
+      \ },
+      \ }
 endif
 
 

@@ -272,7 +272,7 @@ inoremap <silent><F10> <ESC>:call asyncrun#quickfix_toggle(6)<cr>
 	noremap <space>fb :Leaderf! buffer<cr>
 
 	" 当前buffer 检索 当前词
-	noremap <space>fw :Leaderf! line --cword<cr>
+	noremap <space>fw :Leaderf! line --regexMode --cword<cr>
 
 	" 当前目录下 查找光标下的词
 	noremap <space>fW :<C-U><C-R>=printf("Leaderf! rg -w %s .", expand("<cword>"))<CR><CR>
