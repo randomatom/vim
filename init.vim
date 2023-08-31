@@ -49,9 +49,4 @@ LoadScript init/style.vim
 " 自定义按键
 LoadScript init/keymaps.vim
 
-
-" 增加terminal的操作
-LoadScript plugin/terminal_help.vim
-
-
 LoadScript custom.vim
