@@ -18,6 +18,7 @@ if !exists('g:bundle_group')
 	let g:bundle_group += ['airline']
 	let g:bundle_group += ['nerdtree', 'ale', 'echodoc', 'task']
 	let g:bundle_group += ['leaderf']
+	let g:bundle_group += ['tags']
 endif
 
 
