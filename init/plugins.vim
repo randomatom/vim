@@ -508,7 +508,10 @@ if index(g:bundle_group, 'leaderf') >= 0
 	" 禁用 function/buftag 的预览功能，可以手动用 p 预览
 	let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 
-
+	" 自动加载安装 C 扩展
+	if exists('g:Lf_fuzzyEngine_C') && g:Lf_fuzzyEngine_C == 0
+	|   call LeaderfInstallCExtension()
+	endif
 endif
 
 
