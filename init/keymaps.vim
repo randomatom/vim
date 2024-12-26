@@ -256,7 +256,7 @@ inoremap <silent><F10> <ESC>:call asyncrun#quickfix_toggle(6)<cr>
 " LeaderF 按键配置
 "----------------------------------------------------------------------
 
-	" 打开函数列表，按 i 进入模糊匹配，ESC 退出
+	" 打开文件列表，按 i 进入模糊匹配，ESC 退出
 	noremap <space>fp :Leaderf file<cr>
 
 	" 打开最近使用的文件 MRU，进行模糊匹配
