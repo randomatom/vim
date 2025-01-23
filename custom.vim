@@ -5,4 +5,7 @@ inoremap <F2> <ESC>:!navi --print > ~/.vim/tmp/.navi.txt<CR><CR>:r ~/.vim/tmp/.n
 
 inoremap jj <ESC>
 
+if &diff
+    colorscheme evening
+endif
 
